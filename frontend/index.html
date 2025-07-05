@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/spider-favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Spider-Dev Portfolio | Web-Slinging Developer</title>
+    <meta name="title" content="Spider-Dev Portfolio | Web-Slinging Developer" />
+    <meta name="description" content="Interactive 3D portfolio showcasing web development superpowers. Featuring Spider-Man inspired animations, Ben 10 themes, and cutting-edge React/Three.js experiences." />
+    <meta name="keywords" content="portfolio, web developer, React, Three.js, Spider-Man, interactive, 3D, frontend, fullstack, JavaScript, TypeScript" />
+    <meta name="author" content="Spider-Dev" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://your-portfolio-domain.com/" />
+    <meta property="og:title" content="Spider-Dev Portfolio | Web-Slinging Developer" />
+    <meta property="og:description" content="Interactive 3D portfolio showcasing web development superpowers. Featuring Spider-Man inspired animations, Ben 10 themes, and cutting-edge React/Three.js experiences." />
+    <meta property="og:image" content="/images/portfolio-preview.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://your-portfolio-domain.com/" />
+    <meta property="twitter:title" content="Spider-Dev Portfolio | Web-Slinging Developer" />
+    <meta property="twitter:description" content="Interactive 3D portfolio showcasing web development superpowers. Featuring Spider-Man inspired animations, Ben 10 themes, and cutting-edge React/Three.js experiences." />
+    <meta property="twitter:image" content="/images/portfolio-preview.jpg" />
+    
+    <!-- Additional Meta Tags -->
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="theme-color" content="#dc2626" />
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="/audio/hero-theme.mp3" as="audio" type="audio/mpeg" />
+    <link rel="preload" href="/images/spider-web-bg.jpg" as="image" type="image/jpeg" />
+    
+    <!-- Additional Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Performance Optimizations -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  </head>
+  <body class="bg-black text-white overflow-x-hidden">
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-black z-50 flex items-center justify-center">
+      <div class="text-center">
+        <div class="w-16 h-16 border-4 border-red-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+        <p class="text-red-500 text-lg font-semibold">Initializing Spider-Sense...</p>
+      </div>
+    </div>
+    
+    <!-- Main App -->
+    <div id="root"></div>
+    
+    <!-- Console Welcome Message -->
+    <script>
+      console.log(`
+🕷️ Welcome to Spider-Dev's Portfolio! 🕷️
+
+Try these console commands:
+- webShoot() - Fire web shooters
+- spiderSense() - Activate spider-sense
+- ben10Transform() - Transform like Ben 10
+- launchGame() - Play Spider-Web Shooter
+- talkToEdith() - Chat with EDITH AI
+- spideySwing() - Trigger Spider-Man swing
+
+Your friendly neighborhood developer,
+Spider-Dev 🕸️
+      `);
+      
+      // Hide loading screen when page is loaded
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+            loadingScreen.style.opacity = '0';
+            loadingScreen.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(() => {
+              loadingScreen.remove();
+            }, 500);
+          }
+        }, 1000);
+      });
+    </script>
+    
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

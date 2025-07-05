@@ -1,0 +1,12 @@
+# Placeholder for hero-background.mp3
+# 
+# This is a placeholder file. Replace this with your actual music file.
+# 
+# Recommended music files for HeroSection:
+# - Epic/cinematic background music
+# - Spider-Man themed tracks
+# - Loopable instrumental music
+# - Duration: 2-4 minutes (will loop automatically)
+# 
+# Supported formats: MP3, WAV, OGG, M4A
+# Recommended: MP3 (128-320kbps) for best performance

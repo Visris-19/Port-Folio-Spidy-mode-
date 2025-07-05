@@ -1,0 +1,97 @@
+{
+  "bio": {
+    "name": "Vishal Pandey",
+    "title": "Full-Stack Developer & Your Friendly Neighborhood Web Developer",
+    "intro": "I'm a passionate developer who loves building amazing web experiences with React, Three.js, and modern technologies. I combine Spider-Man's responsibility with Ben 10's alien powers to create incredible digital solutions.",
+    "location": "India",
+    "experience": "3+ years of web development experience",
+    "personality": "Friendly, enthusiastic, always ready to help, loves superhero themes and making complex things simple"
+  },
+  "skills": {
+    "frontend": [
+      "React.js & Next.js",
+      "Three.js & WebGL",
+      "Framer Motion",
+      "Tailwind CSS",
+      "TypeScript",
+      "HTML5 & CSS3",
+      "JavaScript ES6+"
+    ],
+    "backend": [
+      "Node.js & Express",
+      "Java Spring Boot",
+      "RESTful APIs",
+      "MongoDB & MySQL",
+      "Authentication & Security"
+    ],
+    "tools": [
+      "Git & GitHub",
+      "VS Code",
+      "Figma",
+      "Postman",
+      "Docker basics"
+    ],
+    "specialties": [
+      "3D Web Development",
+      "Interactive Animations",
+      "Responsive Design",
+      "Performance Optimization",
+      "UI/UX Design"
+    ]
+  },
+  "projects": {
+    "skill_mela": {
+      "name": "Skill Mela",
+      "description": "A comprehensive skill-sharing platform where users can learn and teach various skills",
+      "tech": ["React", "Node.js", "MongoDB", "Express"],
+      "features": ["User authentication", "Course management", "Video streaming", "Payment integration"],
+      "status": "Live and actively maintained"
+    },
+    "aarambh_bharat": {
+      "name": "Aarambh Bharat",
+      "description": "A platform promoting Indian startups and entrepreneurship",
+      "tech": ["React", "Java Spring Boot", "MySQL"],
+      "features": ["Startup directory", "Investor connections", "Resource sharing"],
+      "status": "Completed and deployed"
+    },
+    "spider_portfolio": {
+      "name": "Spider-Dev Portfolio",
+      "description": "This very portfolio you're looking at! A 3D animated website inspired by Spider-Man and Ben 10",
+      "tech": ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
+      "features": ["3D backgrounds", "Interactive game", "AI assistant (me!)", "Console easter eggs"],
+      "status": "Currently showcasing"
+    }
+  },
+  "interests": {
+    "coding": ["Web development", "3D graphics", "AI integration", "Performance optimization"],
+    "hobbies": ["Watching Marvel movies", "Ben 10 series", "Gaming", "Learning new technologies"],
+    "community": ["Mentoring junior developers", "Hackathon participation", "Tech meetups"],
+    "superhero_philosophy": "With great power comes great responsibility - I use my coding skills to help others and create amazing user experiences"
+  },
+  "fun_facts": [
+    "I can code for hours while listening to the Spider-Man soundtrack",
+    "My variable names sometimes include superhero references",
+    "I believe every website should have at least one easter egg",
+    "I once built a web app that could transform like Ben 10's Omnitrix",
+    "My favorite debugging technique is called 'Spider-Sense' - I can sense bugs before they happen",
+    "I've watched every Spider-Man movie at least 5 times for 'research purposes'",
+    "My coding setup includes Spider-Man and Ben 10 figurines for inspiration"
+  ],
+  "contact": {
+    "approach": "I'm always excited to collaborate on interesting projects, especially if they involve creative web development or helping others learn to code",
+    "availability": "Open to freelance projects, mentoring opportunities, and discussing cool tech ideas",
+    "response_time": "Usually respond within 24 hours (faster if it's about Spider-Man or coding!)"
+  },
+  "edith_personality": {
+    "greeting": "Even Dead, I'm The Hero",
+    "style": "Professional but friendly, with subtle superhero references",
+    "knowledge_depth": "Deep understanding of Vishal's projects, skills, and personality",
+    "helpfulness": "Always ready to provide detailed information and connect visitors with Vishal",
+    "catchphrases": [
+      "With great code comes great responsibility",
+      "Let me help you navigate this web of information",
+      "Activating Spider-Sense to find the perfect answer",
+      "Transforming your questions into solutions"
+    ]
+  }
+}
