@@ -23,18 +23,27 @@ An enhanced scroll progress indicator with Spider-Man theme!
 - **Gradient Web**: Beautiful red gradient progress bar
 
 ### 🎮 **Console Commands**
-New console command added for manual Spider-Man control!
+Interactive console commands that visitors can discover and use!
 
-**New Command:**
-- `spideySwing()` - Triggers Spider-Man to swing across the entire screen
+**How Visitors Can Discover:**
+- 🕷️ **Floating Spider Icon**: Click the animated spider button (bottom-right)
+- ⌨️ **Keyboard Shortcuts**: Ctrl+Shift+S opens command modal
+- 💡 **Auto-Hint**: New visitors see a helpful tooltip after 3 seconds
+- 🔍 **Console Help**: Type `help()` in console for full command list
 
 **All Available Commands:**
+- `help()` - Show detailed command list and instructions
 - `webShoot()` - Shoot a web effect
 - `spiderSense()` - Activate spider-sense visual effect
 - `spideySwing()` - Manual Spider-Man swing animation
 - `alienTransform()` - Ben 10 transformation
 - `playWebGame()` - Launch web shooter game
 - `talkToEdith()` - Open EDITH AI chat
+
+**Keyboard Shortcuts:**
+- `Ctrl+Shift+S` - Open Spider Commands modal
+- `Ctrl+Shift+H` - Show help in console
+- `Ctrl+Shift+W` - Quick web shoot effect
 
 ## 🎯 How It Works
 

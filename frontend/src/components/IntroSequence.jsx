@@ -5,24 +5,28 @@ const IntroSequence = ({ onIntroComplete, onSkip }) => {
   const [currentStep, setCurrentStep] = useState('loading');
   const [audioPlaying, setAudioPlaying] = useState(false);
   const audioRef = useRef(null);
+  const timeoutRefs = useRef([]);
 
   // Step progression: loading -> webAnimation -> heroEntry -> webWipe -> complete
   useEffect(() => {
     const timer1 = setTimeout(() => setCurrentStep('webAnimation'), 2000);
     const timer2 = setTimeout(() => setCurrentStep('heroEntry'), 4000);
-    const timer3 = setTimeout(() => setCurrentStep('webWipe'), 7000);    const timer4 = setTimeout(() => {
+    const timer3 = setTimeout(() => setCurrentStep('webWipe'), 9000);    
+    const timer4 = setTimeout(() => {
       setCurrentStep('complete');
       // Add a slight delay to ensure smooth transition
       setTimeout(() => {
         onIntroComplete();
       }, 300);
-    }, 9000);
+    }, 11000);
+    timeoutRefs.current.push(timer1, timer2, timer3, timer4);
 
     return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
-      clearTimeout(timer4);
+      // clearTimeout(timer1);
+      // clearTimeout(timer2);
+      // clearTimeout(timer3);
+      // clearTimeout(timer4);
+      clearTimeouts();
     };
   }, [onIntroComplete]);
 
@@ -34,11 +38,17 @@ const IntroSequence = ({ onIntroComplete, onSkip }) => {
       });
     }
   }, []);
+  const clearTimeouts = () => {
+  timeoutRefs.current.forEach(clearTimeout);
+  timeoutRefs.current = [];
+};
 
   const handleSkip = () => {
     if (audioRef.current) {
       audioRef.current.pause();
+      audioRef.current.currentTime = 0;
     }
+    clearTimeouts();
     onSkip();
   };
   return (
@@ -54,7 +64,7 @@ const IntroSequence = ({ onIntroComplete, onSkip }) => {
       </audio>
 
       {/* Skip Button */}
-      <motion.button
+      {/* <motion.button
         onClick={handleSkip}
         className="absolute top-4 right-4 z-60 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
         initial={{ opacity: 0 }}
@@ -62,7 +72,7 @@ const IntroSequence = ({ onIntroComplete, onSkip }) => {
         transition={{ delay: 1 }}
       >
         Skip Intro
-      </motion.button>
+      </motion.button> */}
 
       <AnimatePresence mode="wait">
         {/* Loading Screen */}
@@ -244,7 +254,7 @@ const IntroSequence = ({ onIntroComplete, onSkip }) => {
                   className="text-xl md:text-2xl text-gray-300 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2 }}
+                  transition={{ delay: 2, duration: 2 }}
                 >
                   <p className="mb-4">
                     MERN Web Developer, AI-ML Enthusiast.
@@ -287,7 +297,7 @@ const IntroSequence = ({ onIntroComplete, onSkip }) => {
             />
 
             {/* Glass breaking effect */}
-            <motion.div
+            {/* <motion.div
               className="absolute inset-0 bg-white"
               initial={{ clipPath: 'polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)' }}
               animate={{
@@ -297,7 +307,7 @@ const IntroSequence = ({ onIntroComplete, onSkip }) => {
                 ]
               }}
               transition={{ delay: 1, duration: 0.8, ease: 'easeOut' }}
-            />
+            /> */}
           </motion.div>        )}
       </AnimatePresence>
     </motion.div>

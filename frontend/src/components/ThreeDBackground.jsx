@@ -2,72 +2,48 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import * as THREE from 'three';
 
-// Floating Web Particles
+// Floating Web Particles - Static version
 const WebParticle = ({ position }) => {
-  const meshRef = useRef();
-  
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime) * 0.2;
-      meshRef.current.rotation.y = Math.cos(state.clock.elapsedTime) * 0.2;
-      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime + position[0]) * 0.5;
-    }
-  });
-
+  // Completely static particles - no animation
   return (
     <group>
-      <mesh ref={meshRef} position={position}>
+      <mesh position={position}>
         <sphereGeometry args={[0.1, 8, 8]} />
         <meshStandardMaterial 
           color="#dc2626" 
           emissive="#dc2626" 
-          emissiveIntensity={0.2}
+          emissiveIntensity={0.05}
           transparent
-          opacity={0.7}
+          opacity={0.2}
         />
       </mesh>
     </group>
   );
 };
 
-// Web Grid Background
+// Web Grid Background - Static version
 const WebGrid = () => {
-  const gridRef = useRef();
-  
-  useFrame((state) => {
-    if (gridRef.current) {
-      gridRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
-      gridRef.current.rotation.z = Math.cos(state.clock.elapsedTime * 0.3) * 0.1;
-    }
-  });
-
+  // Completely static grid - no movement
   return (
-    <group ref={gridRef} position={[0, 0, -10]}>
+    <group position={[0, 0, -10]}>
       <mesh>
         <planeGeometry args={[50, 50, 20, 20]} />
         <meshStandardMaterial 
           color="#1a1a1a" 
           wireframe
           transparent
-          opacity={0.3}
+          opacity={0.1}
         />
       </mesh>
     </group>
   );
 };
 
-// 3D Spider Web
+// 3D Spider Web - Static version
 const SpiderWeb = ({ position = [0, 0, 0], scale = 1 }) => {
-  const webRef = useRef();
-  
-  useFrame((state) => {
-    if (webRef.current) {
-      webRef.current.rotation.z = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
-    }
-  });
-
+  // Removed all animations to make it completely static
   return (
-    <group ref={webRef} position={position} scale={scale}>
+    <group position={position} scale={scale}>
       {/* Radial lines */}
       {[...Array(8)].map((_, i) => {
         const angle = (i / 8) * Math.PI * 2;
@@ -77,7 +53,7 @@ const SpiderWeb = ({ position = [0, 0, 0], scale = 1 }) => {
         return (
           <mesh key={`radial-${i}`} position={[x/2, y/2, 0]} rotation={[0, 0, angle]}>
             <cylinderGeometry args={[0.02, 0.02, 3, 8]} />
-            <meshStandardMaterial color="#dc2626" transparent opacity={0.6} />
+            <meshStandardMaterial color="#dc2626" transparent opacity={0.3} />
           </mesh>
         );
       })}
@@ -86,30 +62,22 @@ const SpiderWeb = ({ position = [0, 0, 0], scale = 1 }) => {
       {[1, 2, 3].map((radius, i) => (
         <mesh key={`circle-${i}`} rotation={[Math.PI / 2, 0, 0]}>
           <torusGeometry args={[radius, 0.02, 8, 32]} />
-          <meshStandardMaterial color="#dc2626" transparent opacity={0.4} />
+          <meshStandardMaterial color="#dc2626" transparent opacity={0.2} />
         </mesh>
       ))}
     </group>
   );
 };
 
-// Floating 3D Text (simplified without drei)
+// Floating 3D Text - Static version
 const FloatingText = ({ text, position, size = 1, color = "#ffffff" }) => {
-  const textRef = useRef();
-  
-  useFrame((state) => {
-    if (textRef.current) {
-      textRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime) * 0.2;
-      textRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.1;
-    }
-  });
-
+  // Completely static text - no animation
   return (
-    <group ref={textRef} position={position}>
+    <group position={position}>
       {/* Simple 3D text replacement using geometry */}
       <mesh>
         <boxGeometry args={[text.length * size * 0.5, size * 0.8, 0.2]} />
-        <meshStandardMaterial color={color} transparent opacity={0.8} />
+        <meshStandardMaterial color={color} transparent opacity={0.3} />
       </mesh>
     </group>
   );
@@ -119,10 +87,10 @@ const FloatingText = ({ text, position, size = 1, color = "#ffffff" }) => {
 const Scene3D = ({ currentSection = 'hero' }) => {
   return (
     <>
-      {/* Basic Lighting */}
-      <ambientLight intensity={0.4} />
-      <pointLight position={[10, 10, 10]} intensity={1} color="#dc2626" />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#3b82f6" />
+      {/* Basic Lighting - More subtle */}
+      <ambientLight intensity={0.2} />
+      <pointLight position={[10, 10, 10]} intensity={0.4} color="#dc2626" />
+      <pointLight position={[-10, -10, -10]} intensity={0.2} color="#3b82f6" />
       
       {/* Background Web Grid */}
       <WebGrid />
@@ -132,17 +100,12 @@ const Scene3D = ({ currentSection = 'hero' }) => {
       <SpiderWeb position={[4, -2, -3]} scale={0.7} />
       <SpiderWeb position={[0, 0, -5]} scale={1} />
       
-      {/* Floating Particles */}
-      {[...Array(20)].map((_, i) => (
-        <WebParticle 
-          key={i} 
-          position={[
-            (Math.random() - 0.5) * 20,
-            (Math.random() - 0.5) * 20,
-            (Math.random() - 0.5) * 10
-          ]} 
-        />
-      ))}
+      {/* Static Particles - Fixed positions */}
+      <WebParticle position={[-8, 5, -2]} />
+      <WebParticle position={[6, -3, -1]} />
+      <WebParticle position={[-3, -6, -3]} />
+      <WebParticle position={[8, 2, -4]} />
+      <WebParticle position={[0, 8, -2]} />
       
       {/* Section-specific content */}
       {currentSection === 'hero' && (
@@ -196,10 +159,12 @@ const Scene3D = ({ currentSection = 'hero' }) => {
 // Main 3D Background Component
 const ThreeDBackground = ({ currentSection, className = "" }) => {
   return (
-    <div className={`fixed inset-0 -z-10 ${className}`}>
+    <div className={`fixed inset-0 -z-10 ${className}`} style={{ pointerEvents: 'none' }}>
       <Canvas
         camera={{ position: [0, 0, 10], fov: 75 }}
         style={{ background: 'transparent' }}
+        dpr={[1, 1.5]} // Limit pixel ratio for better performance
+        performance={{ min: 0.5 }} // Auto-adjust performance
       >
         <Scene3D currentSection={currentSection} />
       </Canvas>

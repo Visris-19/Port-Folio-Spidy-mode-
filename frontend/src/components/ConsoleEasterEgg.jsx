@@ -47,6 +47,7 @@ const ConsoleEasterEgg = () => {
     console.log('%c• Three.js 🎮', styles.normal);
     console.log('%c• Framer Motion ✨', styles.normal);
     console.log('%c• Tailwind CSS 🎨', styles.normal);      console.log('\n%c🕸️ SECRET COMMANDS:', styles.subtitle);
+    console.log('%cType "help()" to see all available commands!', styles.warning);
     console.log('%cType "webShoot()" to shoot web!', styles.normal);
     console.log('%cType "spiderSense()" to activate spider-sense!', styles.normal);
     console.log('%cType "spideySwing()" to trigger Spider-Man swing!', styles.normal);
@@ -291,6 +292,39 @@ const ConsoleEasterEgg = () => {
           edithButton.style.boxShadow = '0 0 30px #3b82f6';
         }
       }, 1000);
+    };
+
+    // Add help function as the first command
+    window.help = () => {
+      console.clear();
+      console.log('%c🕷️ SPIDER-DEV PORTFOLIO - COMMAND CENTER 🕷️', 'color: #dc2626; font-size: 24px; font-weight: bold; text-shadow: 2px 2px 4px rgba(220, 38, 38, 0.5);');
+      console.log('%c================================================', 'color: #3b82f6; font-size: 16px; font-weight: bold;');
+      
+      console.log('\n%c🎯 AVAILABLE COMMANDS:', 'color: #f59e0b; font-size: 18px; font-weight: bold;');
+      console.log('%c┌────────────────────────────────────────────────────────┐', 'color: #6b7280;');
+      console.log('%c│  🕸️  webShoot()       - Shoot a web effect            │', 'color: #10b981;');
+      console.log('%c│  🚨  spiderSense()    - Activate spider-sense effect  │', 'color: #10b981;');
+      console.log('%c│  🔴  spideySwing()    - Manual Spider-Man swing       │', 'color: #10b981;');
+      console.log('%c│  👽  alienTransform() - Ben 10 transformation         │', 'color: #10b981;');
+      console.log('%c│  🎮  playWebGame()    - Launch web shooter game       │', 'color: #10b981;');
+      console.log('%c│  🤖  talkToEdith()    - Open EDITH AI chat            │', 'color: #10b981;');
+      console.log('%c│  🔍  showSecrets()    - Reveal all hidden features    │', 'color: #10b981;');
+      console.log('%c└────────────────────────────────────────────────────────┘', 'color: #6b7280;');
+      
+      console.log('\n%c💡 PRO TIPS:', 'color: #8b5cf6; font-size: 16px; font-weight: bold;');
+      console.log('%c• Click the floating spider icon (🕷️) for a visual command list', 'color: #3b82f6;');
+      console.log('%c• Try scrolling to see Spider-Man swing automatically!', 'color: #3b82f6;');
+      console.log('%c• Open EDITH AI for interactive portfolio exploration', 'color: #3b82f6;');
+      
+      console.log('\n%c🎨 EASTER EGGS:', 'color: #ec4899; font-size: 16px; font-weight: bold;');
+      console.log('%c• Check out the 3D Spider-Web background', 'color: #10b981;');
+      console.log('%c• Watch the Spider-Man progress indicator at the top', 'color: #10b981;');
+      console.log('%c• Look for hidden animations throughout the site', 'color: #10b981;');
+      
+      console.log('\n%c⚡ QUICK START:', 'color: #f59e0b; font-size: 16px; font-weight: bold;');
+      console.log('%cTry: webShoot() ← Start with this one!', 'color: #ef4444; font-size: 16px; font-weight: bold;');
+      
+      console.log('\n%c🕸️ Remember: With great power comes great responsibility! 🕸️', 'color: #dc2626; font-size: 14px; font-style: italic;');
     };
 
     // Welcome message with delayed reveals

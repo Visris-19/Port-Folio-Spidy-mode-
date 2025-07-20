@@ -15,6 +15,8 @@ import ConsoleEasterEgg from './components/ConsoleEasterEgg';
 import EdithFloatingButton from './components/EdithFloatingButton';
 import SwingingSpiderMan from './components/SwingingSpiderMan';
 import SpiderWebProgressBar from './components/SpiderWebProgressBar';
+import SpiderCommandsHelper from './components/SpiderCommandsHelper';
+import KeyboardShortcuts from './components/KeyboardShortcuts';
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -73,6 +75,9 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-x-hidden">
       {/* Console Easter Egg */}
       <ConsoleEasterEgg />
+
+      {/* Keyboard Shortcuts */}
+      <KeyboardShortcuts />
 
       {/* Intro Sequence */}
       <AnimatePresence mode="wait">
@@ -241,6 +246,9 @@ function App() {
 
             {/* EDITH AI Floating Button */}
             <EdithFloatingButton />
+
+            {/* Spider Commands Helper */}
+            <SpiderCommandsHelper />
           </motion.div>
         )}
     </div>
